@@ -1,0 +1,69 @@
+name:                turing
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/turing#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable turing
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base
+                     , turing
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     ResPlicate
+                     , Tag
+                     , Fractran
+                     , Collatz
+                     , Brainfuck
+                     , Figurehead
+  build-depends:       base >= 4.7 && < 5
+                     , containers
+                     , mtl
+                     -- , zipper
+                     , lens
+                     , monad-loops
+                     , arithmoi
+                     , digits
+  default-language:    Haskell2010
+  default-extensions:  TemplateHaskell
+                     , FlexibleContexts
+                     , LambdaCase
+                     , ImplicitParams
+                     , MultiWayIf
+                     , ViewPatterns
+                     , DoAndIfThenElse
+                     , NondecreasingIndentation
+                     , EmptyCase
+                     , RecursiveDo
+                     , TupleSections
+                     , PostfixOperators
+                     , ParallelListComp
+                     , TransformListComp
+                     , MonadComprehensions
+                     , ApplicativeDo
+                     , TypeOperators
+                     , DuplicateRecordFields
+                     -- , StandAloneDeriving
+                     , DeriveGeneric
+                     , DeriveFunctor
+                     , DeriveFoldable
+                     , DeriveTraversable
+                     , DeriveLift
+                     , GeneralizedNewtypeDeriving
+                     , PatternSynonyms
+                     , FunctionalDependencies
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/turing

@@ -1,0 +1,85 @@
+	Wed Jun 14 21:26 2017 Time and Allocation Profiling Report  (Final)
+
+	   turing-exe +RTS -N -p -RTS
+
+	total time  =        9.60 secs   (9604 ticks @ 1000 us, 1 processor)
+	total alloc = 25,214,640,752 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                             %time %alloc
+
+contract    BFComp src/BFComp.hs:(123,1)-(232,25)   99.1   99.2
+
+
+                                                                                                         individual      inherited
+COST CENTRE                   MODULE                  SRC                             no.     entries  %time %alloc   %time %alloc
+
+MAIN                          MAIN                    <built-in>                      178          0    0.0    0.0   100.0  100.0
+ CAF                          GHC.IO.Exception        <entire-module>                 226          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.FD        <entire-module>                 225          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.TopHandler          <entire-module>                 223          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Thread        <entire-module>                 221          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding         <entire-module>                 219          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.FD               <entire-module>                 218          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.Internals <entire-module>                 217          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Control       <entire-module>                 210          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Conc.Signal         <entire-module>                 209          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.Poll          <entire-module>                 203          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding.Iconv   <entire-module>                 200          0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Event.EPoll         <entire-module>                 195          0    0.0    0.0     0.0    0.0
+ CAF:clever2                  BFComp                  <no location info>              268          0    0.0    0.0     0.0    0.0
+  clever                      BFComp                  src/BFComp.hs:(67,1)-(69,54)    388          0    0.0    0.0     0.0    0.0
+ CAF:compile10                BFComp                  <no location info>              266          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    369          0    0.0    0.0     0.0    0.0
+ CAF:compile11                BFComp                  <no location info>              267          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    368          0    0.0    0.0     0.0    0.0
+ CAF:compile5                 BFComp                  <no location info>              261          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    374          0    0.0    0.0     0.0    0.0
+ CAF:compile6                 BFComp                  <no location info>              262          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    373          0    0.0    0.0     0.0    0.0
+ CAF:compile7                 BFComp                  <no location info>              263          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    372          0    0.0    0.0     0.0    0.0
+ CAF:compile8                 BFComp                  <no location info>              264          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    371          0    0.0    0.0     0.0    0.0
+ CAF:compile9                 BFComp                  <no location info>              265          0    0.0    0.0     0.0    0.0
+  compile                     BFComp                  src/BFComp.hs:(10,1)-(22,29)    370          0    0.0    0.0     0.0    0.0
+ CAF:lvl89_rOpK               BFComp                  <no location info>              346          0    0.0    0.0     0.0    0.0
+  contract                    BFComp                  src/BFComp.hs:(123,1)-(232,25)  393          1    0.0    0.0     0.0    0.0
+ CAF:lvl92_rOpN               BFComp                  <no location info>              347          0    0.0    0.0     0.0    0.0
+  testComp                    BFComp                  src/BFComp.hs:(33,1)-(36,25)    363          0    0.0    0.0     0.0    0.0
+   testComp.\                 BFComp                  src/BFComp.hs:(34,35)-(36,25)   364          0    0.0    0.0     0.0    0.0
+ CAF:lvl93_rOpO               BFComp                  <no location info>              348          0    0.0    0.0     0.0    0.0
+  testComp                    BFComp                  src/BFComp.hs:(33,1)-(36,25)    365          0    0.0    0.0     0.0    0.0
+   testComp.\                 BFComp                  src/BFComp.hs:(34,35)-(36,25)   366          0    0.0    0.0     0.0    0.0
+ CAF:main1                    Main                    <no location info>              354          0    0.0    0.0     0.0    0.0
+  main                        Main                    app/Main.hs:6:1-15              356          1    0.0    0.0     0.0    0.0
+ CAF:parse                    BFComp                  src/BFComp.hs:109:1-5           275          0    0.0    0.0     0.0    0.0
+  parse                       BFComp                  src/BFComp.hs:(109,1)-(116,30)  381          1    0.0    0.0     0.0    0.0
+ CAF:parse                    Brainfuck               src/Brainfuck.hs:22:1-5         237          0    0.0    0.0     0.0    0.0
+  parse                       Brainfuck               src/Brainfuck.hs:22:1-20        383          1    0.0    0.0     0.0    0.0
+ CAF:testComp1                BFComp                  <no location info>              349          0    0.0    0.0     0.0    0.0
+  testComp                    BFComp                  src/BFComp.hs:(33,1)-(36,25)    357          1    0.0    0.0     0.0    0.0
+ CAF:testComp2                BFComp                  <no location info>              258          0    0.0    0.0     0.0    0.0
+  testComp                    BFComp                  src/BFComp.hs:(33,1)-(36,25)    359          0    0.0    0.0     0.0    0.0
+ CAF:testComp3                BFComp                  <no location info>              257          0    0.0    0.0     0.0    0.0
+  testComp                    BFComp                  src/BFComp.hs:(33,1)-(36,25)    360          0    0.0    0.0     0.0    0.0
+ CAF:write                    BFComp                  src/BFComp.hs:73:1-5            294          0    0.0    0.0     0.0    0.0
+  write                       BFComp                  src/BFComp.hs:(73,1)-(101,9)    377          1    0.0    0.0     0.0    0.0
+ testComp                     BFComp                  src/BFComp.hs:(33,1)-(36,25)    358          0    0.0    0.0   100.0  100.0
+  testComp.\                  BFComp                  src/BFComp.hs:(34,35)-(36,25)   361          1    0.0    0.0   100.0  100.0
+   compile                    BFComp                  src/BFComp.hs:(10,1)-(22,29)    367          1    0.0    0.0    99.1   99.2
+    compile.converted         BFComp                  src/BFComp.hs:22:9-29           375          1    0.0    0.0    99.1   99.2
+     clever                   BFComp                  src/BFComp.hs:(67,1)-(69,54)    376          1    0.0    0.0    99.1   99.2
+      clever.opti             BFComp                  src/BFComp.hs:(68,9)-(69,54)    379          5    0.0    0.0    99.1   99.2
+       contract               BFComp                  src/BFComp.hs:(123,1)-(232,25)  380  347523424   99.1   99.2    99.1   99.2
+        unwindLoop            BFComp                  src/BFComp.hs:(256,1)-(277,38)  389         48    0.0    0.0     0.0    0.0
+         unwindLoop.supported BFComp                  src/BFComp.hs:(271,9)-(277,38)  392        550    0.0    0.0     0.0    0.0
+         unwindLoop.f         BFComp                  src/BFComp.hs:(265,9)-(270,36)  394        535    0.0    0.0     0.0    0.0
+         isRound              BFComp                  src/BFComp.hs:(252,1)-(254,14)  390        328    0.0    0.0     0.0    0.0
+          offset              BFComp                  src/BFComp.hs:(243,1)-(250,18)  391       7957    0.0    0.0     0.0    0.0
+         unwindLoop.\         BFComp                  src/BFComp.hs:263:29-41         395         19    0.0    0.0     0.0    0.0
+       ==                     BFComp                  src/BFComp.hs:65:19-20          387        158    0.0    0.0     0.0    0.0
+      parse                   BFComp                  src/BFComp.hs:(109,1)-(116,30)  382          0    0.0    0.0     0.0    0.0
+       parse.\                BFComp                  src/BFComp.hs:(109,21)-(116,30) 386       3591    0.0    0.0     0.0    0.0
+   parseFile                  Brainfuck               src/Brainfuck.hs:36:1-38        362          1    0.2    0.4     0.9    0.8
+    parse                     Brainfuck               src/Brainfuck.hs:22:1-20        384          0    0.0    0.0     0.7    0.4
+     parse'                   Brainfuck               src/Brainfuck.hs:(24,1)-(34,26) 385    2189421    0.7    0.4     0.7    0.4

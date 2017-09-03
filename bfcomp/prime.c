@@ -1,0 +1,184 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdio.h>
+
+int main () {
+#define TAPE_SIZE 65536
+char mem[TAPE_SIZE] = {0};
+int ptr=0;
+
+printf("Primes up to: ");
+mem[ptr]=0;mem[ptr+1]=1;mem[ptr+2]=0;mem[ptr+3]=0;mem[ptr+4]=0;mem[ptr+5]=0;mem[ptr+6]=0;
+ptr++;
+while(mem[ptr]){
+  mem[ptr]=0;mem[ptr+1]=0;
+  ptr++;
+  mem[ptr]=getchar();
+  while(mem[ptr]){
+    mem[ptr]++;
+    while(mem[ptr]){
+      mem[ptr]+=245;
+      while(mem[ptr]){
+        mem[ptr]+=218;
+        mem[ptr+1]=0;
+        mem[ptr]+=10*mem[ptr-2];
+        mem[ptr-2]=0;
+        mem[ptr-2]+=mem[ptr];
+        mem[ptr-1]++;
+        mem[ptr]=0;
+      }
+    }
+  }
+  ptr--;
+}
+mem[ptr-1]--;
+mem[ptr]=1;
+ptr--;
+while(mem[ptr]){
+  mem[ptr+1]++;
+  mem[ptr+2]=0;mem[ptr+3]=0;
+  mem[ptr+2]+=mem[ptr+1];mem[ptr+3]+=mem[ptr+1];
+  mem[ptr+1]=0;
+  mem[ptr+1]+=mem[ptr+3];
+  mem[ptr+2]+=254;mem[ptr+10]++;
+  mem[ptr+3]=1;
+  ptr+=2;
+  while(mem[ptr]){
+    mem[ptr]--;mem[ptr+1]++;
+    mem[ptr+2]+=mem[ptr-1];mem[ptr+3]+=mem[ptr-1];
+    mem[ptr-1]=0;
+    mem[ptr-1]+=mem[ptr+3];
+    mem[ptr+3]=0;
+    mem[ptr+3]+=mem[ptr+1];mem[ptr+4]+=mem[ptr+1];
+    mem[ptr+1]=0;
+    mem[ptr+1]+=mem[ptr+4];
+    mem[ptr+4]=0;mem[ptr+5]=0;
+    mem[ptr+4]+=mem[ptr+3];mem[ptr+5]+=mem[ptr+3];
+    mem[ptr+3]=0;
+    mem[ptr+3]+=mem[ptr+5];
+    mem[ptr+5]=0;mem[ptr+7]=0;
+    ptr+=2;
+    while(mem[ptr]){
+      mem[ptr+3]=0;mem[ptr+4]=0;mem[ptr+5]=1;
+      mem[ptr+3]+=mem[ptr+2];mem[ptr+4]+=mem[ptr+2];
+      mem[ptr+2]=0;
+      mem[ptr+2]+=mem[ptr+4];
+      mem[ptr+4]=0;
+      ptr+=3;
+      while(mem[ptr]){
+        mem[ptr]--;
+        mem[ptr+2]=0;
+      }
+      ptr+=2;
+      while(mem[ptr]){
+        mem[ptr-3]=0;mem[ptr-2]=0;
+        mem[ptr-3]+=mem[ptr-4];mem[ptr-2]+=mem[ptr-4];
+        mem[ptr-4]=0;
+        mem[ptr-4]+=mem[ptr-2];
+        mem[ptr-2]=0;mem[ptr]=0;
+      }
+      mem[ptr-5]--;mem[ptr-3]--;
+      ptr-=5;
+    }
+    mem[ptr]=1;
+    ptr+=2;
+    while(mem[ptr]){
+      mem[ptr]--;
+      mem[ptr-2]=0;
+    }
+    mem[ptr-1]=0;
+    ptr-=2;
+    while(mem[ptr]){
+      mem[ptr]--;
+      mem[ptr+6]=0;
+    }
+    mem[ptr]=0;mem[ptr+1]=0;
+    ptr-=2;
+  }
+  ptr+=8;
+  while(mem[ptr]){
+    mem[ptr]--;
+    mem[ptr-7]=0;
+    mem[ptr-7]+=mem[ptr-9];mem[ptr-6]+=mem[ptr-9];
+    mem[ptr-9]=0;
+    mem[ptr-9]+=mem[ptr-6];
+    mem[ptr-6]=0;
+    mem[ptr-6]+=mem[ptr-7];
+    mem[ptr-7]=0;
+    ptr-=6;
+    while(mem[ptr]){
+      mem[ptr+1]+=mem[ptr];mem[ptr+2]+=mem[ptr];
+      mem[ptr]=0;
+      mem[ptr]+=mem[ptr+2];
+      mem[ptr+2]=9;
+      ptr++;
+      while(mem[ptr]){
+        mem[ptr+3]++;
+        ptr++;
+        while(mem[ptr]){
+          mem[ptr]--;mem[ptr+1]++;
+          mem[ptr+2]=0;
+        }
+        mem[ptr]+=mem[ptr+1];
+        mem[ptr+1]=0;
+        mem[ptr]+=10*mem[ptr+2];
+        mem[ptr-1]--;mem[ptr]--;
+        mem[ptr+2]=0;
+        ptr--;
+      }
+      mem[ptr]=9;
+      mem[ptr]+=255*mem[ptr+1];
+      mem[ptr+1]=0;
+      mem[ptr+1]+=mem[ptr];
+      mem[ptr]=0;
+      mem[ptr]+=mem[ptr-1];
+      mem[ptr-1]=0;
+      mem[ptr-1]+=mem[ptr-2];
+      mem[ptr-2]=0;
+      mem[ptr-2]+=mem[ptr+1];
+      mem[ptr+1]=9;
+      while(mem[ptr]){
+        mem[ptr+3]++;
+        ptr++;
+        while(mem[ptr]){
+          mem[ptr]--;mem[ptr+1]++;
+          mem[ptr+2]=0;
+        }
+        mem[ptr]+=mem[ptr+1];
+        mem[ptr+1]=0;
+        mem[ptr]+=10*mem[ptr+2];mem[ptr+3]+=mem[ptr+2];
+        mem[ptr-1]--;mem[ptr]--;
+        mem[ptr+2]=0;
+        ptr--;
+      }
+      mem[ptr]+=mem[ptr+4];
+      mem[ptr-1]++;
+      mem[ptr+1]=0;mem[ptr+4]=0;
+    }
+    ptr--;
+    while(mem[ptr]){
+      mem[ptr+1]+=mem[ptr];
+      mem[ptr-1]+=48;
+      mem[ptr]=0;
+      putchar(mem[ptr-1]);
+      mem[ptr-1]=0;
+      mem[ptr-1]+=mem[ptr+1];
+      mem[ptr-1]--;
+      mem[ptr+1]=0;
+      ptr--;
+    }
+    mem[ptr+1]+=4;
+    mem[ptr]+=8*mem[ptr+1];
+    mem[ptr+1]=0;
+    putchar(mem[ptr]);
+    mem[ptr]=0;
+    ptr+=7;
+  }
+  mem[ptr-10]--;
+  mem[ptr-8]=0;mem[ptr-7]=0;
+  ptr-=10;
+}
+printf("\n");
+
+return 0;
+}
